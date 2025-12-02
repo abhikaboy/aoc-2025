@@ -1,0 +1,52 @@
+   0.005815333s  INFO prepare_target{force=false package_id=hello-rust v0.1.0 (/Users/abhikray/Documents/Advent Of Code /hello-rust) target="hello-rust"}: cargo::core::compiler::fingerprint: fingerprint error for hello-rust v0.1.0 (/Users/abhikray/Documents/Advent Of Code /hello-rust)/Check { test: false }/TargetInner { name: "hello-rust", doc: true, ..: with_path("/Users/abhikray/Documents/Advent Of Code /hello-rust/src/main.rs", Edition2024) }
+   0.006061666s  INFO prepare_target{force=false package_id=hello-rust v0.1.0 (/Users/abhikray/Documents/Advent Of Code /hello-rust) target="hello-rust"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/abhikray/Documents/Advent Of Code /hello-rust/target/debug/.fingerprint/hello-rust-afada3e9efb40977/bin-hello-rust`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+   0.027269416s  INFO prepare_target{force=false package_id=hello-rust v0.1.0 (/Users/abhikray/Documents/Advent Of Code /hello-rust) target="hello-rust"}: cargo::core::compiler::fingerprint: fingerprint error for hello-rust v0.1.0 (/Users/abhikray/Documents/Advent Of Code /hello-rust)/Check { test: true }/TargetInner { name: "hello-rust", doc: true, ..: with_path("/Users/abhikray/Documents/Advent Of Code /hello-rust/src/main.rs", Edition2024) }
+   0.027283291s  INFO prepare_target{force=false package_id=hello-rust v0.1.0 (/Users/abhikray/Documents/Advent Of Code /hello-rust) target="hello-rust"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/abhikray/Documents/Advent Of Code /hello-rust/target/debug/.fingerprint/hello-rust-928c0b78a7590caf/test-bin-hello-rust`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+    Checking hello-rust v0.1.0 (/Users/abhikray/Documents/Advent Of Code /hello-rust)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.22s
