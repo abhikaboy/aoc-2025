@@ -73,22 +73,25 @@ fn parse_number(s: &str) -> Result<i64, std::num::ParseIntError> {
     Ok(num)
 }
 
+const OPERATIONS_ROW : usize = 4;
+
 fn parse_input(input: &str) -> Vec<Column> {
     let mut cols : Vec<Column> = Vec::new();
     let lines_lol = input.lines();
     for (index, lines) in lines_lol.enumerate() {
-        if index == 4 {
+        // handle operations
+        if index == OPERATIONS_ROW {
             for (index, item) in lines.split(" ").filter(|s| s.len() > 0).enumerate() {
                 let pop = &mut cols[index];
                 pop.set_operation(item.trim());
             }
-        } else {
-            for (index2,item) in lines.split(" ").filter(|s| s.len()>0).enumerate() {
+        } else { // handle constructing columns
+            for (indexInRow,item) in lines.split(" ").filter(|s| s.len()>0).enumerate() {
                 let num = parse_number(item.trim()).unwrap();
                 if index == 0 {
                     cols.push(Column::new(vec![num], Operation::None))
                 } else {
-                    cols[index2].append_number(num);
+                    cols[indexInRow].append_number(num);
                 }
             }
         }
